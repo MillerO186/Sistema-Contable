@@ -19,7 +19,7 @@ class AplicacionPrincipal(tk.Tk):
 
         # La barra de navegación de arriba
         self.notebook = ttk.Notebook(self)
-        self.notebook.pack(fill="both", expand=True)  # Cambiado para que el Notebook ocupe todo el espacio
+        self.notebook.pack(fill="both", expand=True)  # Cambiado para que el Notebook ocupe tudo el espacio
 
         self.crear_vistas()
 

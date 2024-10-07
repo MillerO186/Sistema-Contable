@@ -38,7 +38,7 @@ class BalanceGeneral(tk.Frame):
         self.canvas.create_window((0, 0), window=self.scrollable_frame, anchor="nw")
         self.canvas.configure(yscrollcommand=self.scrollbar_y.set)
 
-        # Cambiado para que el Canvas y el Scrollbar ocupen todo el espacio
+        # Cambiado para que el Canvas y el Scrollbar ocupen tudo el espacio
         self.canvas.pack(side="left", fill="both", expand=True)
         self.scrollbar_y.pack(side="right", fill="y")
 
