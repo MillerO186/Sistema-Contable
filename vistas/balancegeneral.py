@@ -195,14 +195,15 @@ class BalanceGeneral(tk.Frame):
             cursor.execute("SELECT id_cuenta, nombre FROM catalogo_cuentas WHERE id_cuenta = %s", (cuenta,))
             cuentas = cuentas + cursor.fetchall()
 
-
         conta = 0
+        fecha = fecha if fecha.split("'")[1] != "None" else "07-10-2024"
+
         for cuenta in cuentas:
             id_cuenta = cuenta[0]
             nombre_cuenta = cuenta[1]
             nombre_formateado = str(id_cuenta) + "-" + str(nombre_cuenta)
-
             # Obtener totales de los mayores
+
             cursor.execute("SELECT SUM(debe), SUM(haber) FROM libros_diarios WHERE id_cuenta = %s  AND fecha<=%s", (id_cuenta,fecha, ))
             total_debe, total_haber = cursor.fetchone()
 
