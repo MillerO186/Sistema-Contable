@@ -2,7 +2,7 @@
 Este es el repositorio del código del grupo 5 del curso de Sistema y gestión financiera.
 Aprovechamos este espacio para detallar los pasos para ejecutar correctamente el programa:
 ## Paso 1: Crear la Base de datos
-### Se tiene que llamar SistemaFinanciero
+### Se tiene que llamar *SistemaFinanciero*  revisar *conex_posgres* para modfiicar o revisar la información de usuario para conectarse a su base de datos
 
 ```sql
 DROP TABLE IF EXISTS catalogo_elementos;
@@ -42,6 +42,15 @@ ALTER TABLE ONLY public.libros_diarios
     
 ALTER TABLE ONLY public.libros_diarios
     ADD CONSTRAINT id_cuenta FOREIGN KEY (id_cuenta) REFERENCES public.catalogo_cuentas(id_cuenta) NOT VALID;
+
+INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (1, 'EFECTIVO Y EQUIVALENTES DE EFECTIVO');
+INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (2, 'ACTIVO REALIZABLE');
+INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (3, 'ACTIVO INMOVILIZADO');
+INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (4, 'PASIVO');
+INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (5, 'PATRIMONIO NETO');
+INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (6, 'GASTOS POR NATURALEZA');
+INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (7, 'INGRESOS');
+INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (8, 'SALDOS INTERMEDIARIOS DE GESTIÓN Y DETERMINACIÓN DEL RESULTADO DEL EJERCICIO');
 
 INSERT INTO public.catalogo_cuentas (id_cuenta, id_elemento, nombre) VALUES (10, 1, 'Efectivo y equivalentes de efectivo');
 INSERT INTO public.catalogo_cuentas (id_cuenta, id_elemento, nombre) VALUES (11, 1, 'Inversiones financieras');
@@ -118,12 +127,5 @@ INSERT INTO public.catalogo_cuentas (id_cuenta, id_elemento, nombre) VALUES (85,
 INSERT INTO public.catalogo_cuentas (id_cuenta, id_elemento, nombre) VALUES (88, 8, 'Impuesto a la renta');
 INSERT INTO public.catalogo_cuentas (id_cuenta, id_elemento, nombre) VALUES (89, 8, 'Determinación del resultado del ejercicio');
 
-INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (1, 'EFECTIVO Y EQUIVALENTES DE EFECTIVO');
-INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (2, 'ACTIVO REALIZABLE');
-INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (3, 'ACTIVO INMOVILIZADO');
-INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (4, 'PASIVO');
-INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (5, 'PATRIMONIO NETO');
-INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (6, 'GASTOS POR NATURALEZA');
-INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (7, 'INGRESOS');
-INSERT INTO public.catalogo_elementos (id_elemento, nombre) VALUES (8, 'SALDOS INTERMEDIARIOS DE GESTIÓN Y DETERMINACIÓN DEL RESULTADO DEL EJERCICIO');
+
 ```
