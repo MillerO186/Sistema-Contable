@@ -257,6 +257,7 @@ class DiariosHub(tk.Frame):
             if numero_elemento in elementos:
                 tipo_elemento = tipo
                 break
+        print(tipo_elemento)
         debe = ""
         haber = ""
 
@@ -275,7 +276,7 @@ class DiariosHub(tk.Frame):
         ID = fecha + "/" + str(int(obtenerID()) + 1)
 
         if self.movimiento.get() == "Aumenta" and (
-                tipo_elemento == "Ingreso" or tipo_elemento == "Pasivo" or tipo_elemento == "Patrimonio"):
+                tipo_elemento == "Ingreso" or tipo_elemento == "Pasivo" or tipo_elemento == "Capital"):
             haber = self.monto.get()
             debe = ""
         if self.movimiento.get() == "Aumenta" and (
@@ -283,7 +284,7 @@ class DiariosHub(tk.Frame):
             debe = self.monto.get()
             haber = ""
         if self.movimiento.get() == "Disminuye" and (
-                tipo_elemento == "Ingreso" or tipo_elemento == "Pasivo" or tipo_elemento == "Patrimonio"):
+                tipo_elemento == "Ingreso" or tipo_elemento == "Pasivo" or tipo_elemento == "Capital"):
             haber = ""
             debe = self.monto.get()
         if self.movimiento.get() == "Disminuye" and (

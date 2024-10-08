@@ -142,8 +142,9 @@ class MayoresHub(tk.Frame):
         cargarcursor.execute("""
             SELECT fecha, debe FROM libros_diarios WHERE id_cuenta = %s AND debe != 0 ORDER BY fecha
         """, (id_cuenta,))
-        diarios_debe = cargarcursor.fetchall()
 
+        diarios_debe = cargarcursor.fetchall()
+        print(diarios_debe)
         tabla_debe.tag_configure('evenrow', background="#F0F0F0")
         tabla_debe.tag_configure('oddrow', background="white")
         cont = 0
@@ -178,7 +179,7 @@ class MayoresHub(tk.Frame):
             SELECT fecha, haber FROM libros_diarios WHERE id_cuenta = %s AND haber != 0 ORDER BY fecha
         """, (id_cuenta,))
         diarios_haber = cargarcursor.fetchall()
-
+        print(diarios_haber)
         cont = 0
         tabla_haber.tag_configure('evenrow', background="#F0F0F0")
         tabla_haber.tag_configure('oddrow', background="white")

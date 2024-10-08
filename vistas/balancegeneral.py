@@ -196,7 +196,9 @@ class BalanceGeneral(tk.Frame):
             cuentas = cuentas + cursor.fetchall()
 
         conta = 0
-        fecha = fecha if fecha.split("'")[1] != "None" else "07-10-2024"
+        if len(fecha.split("'"))>1:
+            print(fecha.split("'"))
+            fecha = "07-10-2024"
 
         for cuenta in cuentas:
             id_cuenta = cuenta[0]
